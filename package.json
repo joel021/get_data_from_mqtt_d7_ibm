@@ -1,0 +1,15 @@
+{
+  "name": "projeto_node",
+  "version": "1.0.0",
+  "description": "Um projeto node",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "qualquer",
+    "um"
+  ],
+  "author": "Joel",
+  "license": "ISC"
+}

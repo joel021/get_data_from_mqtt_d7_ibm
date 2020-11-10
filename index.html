@@ -1,0 +1,31 @@
+<html>
+<head>
+  <title>test Ws mqtt.js</title>
+</head>
+<body>
+<script src="./browserMqtt.js"></script>
+<script>
+var mqtt = require('mqtt');
+var client  = mqtt.connect([{
+    host:"tnt-iot.maratona.dev",
+    port:30573
+}]);
+
+client.options.username = "maratoners";
+client.options.password = "ndsjknvkdnvjsbvj";
+client.options.protocolId='MQTT';
+
+client.options.clientI= "joel-d7-id-random";
+
+client.on('connect', function () {
+  client.subscribe('tnt', function (err) {
+        client.on('message', function(topic, message, packet) {
+            let TNT_DATA = JSON.parse(message);
+            console.log('#TNT_DATA: '+message);
+        });
+    });
+});
+
+</script>
+</body>
+</html>
